@@ -1,6 +1,140 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo {
+  margin-top: 5px;
+  padding: 5px;
+  max-width: 250px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.todo .checkbox {
+  width: 20px;
+  height: 20px;
+  margin: auto 2px;
+
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.todo.is-complete .checkbox {
+  background-color: lime;
+}
+
+.text {
+  background-color: transparent;
+  padding: 0 5px;
+  border: none;
+}
+
+.text:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.text:focus {
+  outline: none;
+}
+
+.addPopup{
+  position: fixed;
+  top: calc(100% - 7.5rem);
+  left: calc(100% - 7rem);
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 75px;
+  padding: 0px 30px;
+
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.closePopup{
+  width: fit-content;
+  padding: 0 5px;
+  float: right;
+  background-color: red;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.popup{
+  padding: 10px;
+  position: fixed;
+  top: calc(50% - 5rem);
+  left: calc(50% - 8.2rem);
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.content h3{
+  color: rgba(0,0,0, 0.9)
+}
+
+.add-todo-input, .button{
+  background-color: rgba(0,0,0, 0.1);
+}
+
+.add-todo-input{
+  margin-right: 2px;
+}
+
+.add-todo-input:focus{
+  outline: none;
+}
+
+.delete-todo{
+  background-color: red;
+  padding: 0px 5px;
+  margin: auto 0;
+  margin-left: 2px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
