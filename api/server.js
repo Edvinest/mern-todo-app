@@ -5,18 +5,25 @@ const cors = require('cors');
 const app = express();
 
 app.use(express.json());
+
+// For some reason, CORS by itself doesn't work in my Firefox
 app.use(cors({
     origin: 'http://localhost:5173'
 }));
 
 mongoose.connect('mongodb://127.0.0.1:27017/mern-todo', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    useNewUrlParser: true, // allows more formats for connection strings
+    useUnifiedTopology: true // for more reliable and efficent connection
 })
     .then(() => console.log("Successfully connected!"))
     .catch(console.error);
 
 const Todo = require('./models/Todo');
+
+// GET - get data from DB using the URL
+// POST - push data to DB
+// DELETE - delete data that matches criteria
+// PUT - update / replace data that matches criteria
 
 app.get('/todos', async(req, res) =>{
     const todos = await Todo.find();
@@ -29,7 +36,7 @@ app.post('/todo/new', (req, res) => {
         text: req.body.text
     })
 
-    todo.save();
+    todo.save(); // save DB, duh
 
     res.json(todo);
 })

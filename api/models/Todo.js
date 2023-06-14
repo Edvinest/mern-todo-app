@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// TL;DR
+// Schema is used to define the structure of the DB
+// and stores data in JSON-like documents
+
 const TodoSchema = new Schema({
     text:{
         type: String,
@@ -15,6 +19,9 @@ const TodoSchema = new Schema({
         default: Date.now()
     }
 })
+
+// Creates the DB object
+// This is what allows me to perform actions with the DB
 
 const Todo = mongoose.model("Todo", TodoSchema);
 

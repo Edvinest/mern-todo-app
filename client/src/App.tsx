@@ -34,11 +34,14 @@ function App() {
     }));
   }
 
+  // The object is necessary to handle data related to the server
+  // Headers provide additional info about request/response
   const addTodo = async () => {
     const data = await fetch(API_BASE + '/todo/new',
       {
         method: 'POST',
-        headers: { "Content-Type": "application/json" }, body: JSON.stringify({
+        headers: { "Content-Type": "application/json" }, 
+        body: JSON.stringify({
           text: newTodo
         })
       }).then(res => res.json())
